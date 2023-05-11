@@ -1,0 +1,4 @@
+env/
+tmp.out
+*.csv
+*.json

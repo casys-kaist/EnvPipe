@@ -1,0 +1,5 @@
+pybind11
+torch
+six
+regex
+numpy==1.20.0
