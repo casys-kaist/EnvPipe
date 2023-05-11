@@ -156,7 +156,7 @@ There are three parameters for energy saving optimization settings in EnvPipe.
 |  | balanced | SM frequencies of pipeline units on the critical path are balanced as much as possible. |
 
 
-EnvPipe's reconfiguring phase generates an output at each step that represents the current energy-saving plan that specifies a schedule of the forward and backward pipeline units and SM frequency value of each pipeline unit. Each pipeline unit is shown as a combination of its type (forward or backward), SM frequency, and time between pipeline units. Units on the critical path are wrapped in [ ]. The reconfiguring phase ends when the critical path matches the outer envelope of the pipeline.
+EnvPipe's reconfiguring phase generates an output at each step that represents the current energy-saving plan that specifies a schedule of the forward and backward pipeline units and SM frequency value of each pipeline unit. Each pipeline unit is shown as a combination of its type (forward or backward), SM frequency, and time between pipeline units in milliseconds. Units on the critical path are wrapped in [ ]. The reconfiguring phase ends when the critical path matches the outer envelope of the pipeline.
 
 ```bash
 CURRENT_STEP
