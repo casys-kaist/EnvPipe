@@ -105,7 +105,7 @@ $ pip install -v --disable-pip-version-check --no-cache-dir --global-option="--c
 ## 3. Download source code
 
 ```shell
-$ git clone git@github.com:casys-kaist/EnvPipe.git
+$ git clone https://github.com/casys-kaist/EnvPipe.git
 $ cd EnvPipe
 ```
 
