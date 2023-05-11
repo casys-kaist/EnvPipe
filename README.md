@@ -166,7 +166,7 @@ Stage 2 | [F0 1980 41.4]  F1 1260 12.8  F2 1260 2.1   F3 1260 1.4   B0 1260 32.8
 Stage 3 | [F0 1980 59.5] [B0 1980 0.0] [F1 1980 0.6] [B1 1980 0.0] [F2 1980 0.6] [B2 1980 0.0] [F3 1980 0.6] [B3 1980 0.0]
 ```
 
-EnvPipe currently supports V100 and RTX3090 GPUs. If you plan to use a different GPU type, you can add its configuration to `EnvPipe/DeepSpeed/deepspeed/runtime/constants.py`.
+EnvPipe currently supports V100 and RTX3090 GPUs. If you plan to use a different GPU type, you should add its configuration to `EnvPipe/DeepSpeed/deepspeed/runtime/constants.py`.
 
 ### 6.1. Single-node
 
