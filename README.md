@@ -22,6 +22,9 @@ EnvPipe (**Env**elope + **Pipe**line Parallelism) is an energy-saving DNN traini
     - [6.1. Single node](#61-single-node)
     - [6.2. Multi node](#62-multi-node)
 
+## Publication
+- Paper: [https://www.usenix.org/conference/atc22/presentation/choi-sangjin](https://www.usenix.org/conference/atc23/presentation/choi)
+- Authors: Sangjin Choi and Inhoe Koo, KAIST; Jeongseob Ahn, Ajou University; Myeongjae Jeon, UNIST; Youngjin Kwon, KAIST
 
 ## 1. Tested environment
 ### 1.1. Hardware
