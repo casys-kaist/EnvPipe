@@ -1,9 +1,9 @@
 # EnvPipe: Performance-preserving DNN Training Framework for Saving Energy (USENIX ATC 2023)
 EnvPipe (**Env**elope + **Pipe**line Parallelism) is an energy-saving DNN training framework aiming to maximize energy saving while maintaining negligible performance slowdown. EnvPipe takes advantage of slack time created by bubbles in pipeline parallelism. It schedules pipeline units to place bubbles after pipeline units as frequently as possible and then stretches the execution time of pipeline units by lowering the SM frequency. During this process, EnvPipe does not modify hyperparameters or pipeline dependencies, preserving the original accuracy of the training task. It selectively lowers the SM frequency of pipeline units to avoid performance degradation. The current prototype of EnvPipe is implemented on top of [DeepSpeed](https://github.com/microsoft/DeepSpeed) with [NVIDIA Management Library](https://developer.nvidia.com/nvidia-management-library-nvml) to adjust the SM frequency of GPUs.
 
-<!-- ## Publication
-- Paper: to be updated
-- Authors: Sangjin Choi, Inhoe Koo, Jeongseob Ahn, Myeongjae Jeon, Youngjin Kwon -->
+## Publication
+- Paper: [https://www.usenix.org/conference/atc23/presentation/choi](https://www.usenix.org/conference/atc23/presentation/choi)
+- Authors: Sangjin Choi and Inhoe Koo, KAIST; Jeongseob Ahn, Ajou University; Myeongjae Jeon, UNIST; Youngjin Kwon, KAIST
 
 ## Contents 
 - [1. Tested environment](#1-tested-environment)
@@ -21,10 +21,6 @@ EnvPipe (**Env**elope + **Pipe**line Parallelism) is an energy-saving DNN traini
 - [6. Run benchmarks](#6-run-benchmarks)
     - [6.1. Single node](#61-single-node)
     - [6.2. Multi node](#62-multi-node)
-
-## Publication
-- Paper: [https://www.usenix.org/conference/atc23/presentation/choi](https://www.usenix.org/conference/atc23/presentation/choi)
-- Authors: Sangjin Choi and Inhoe Koo, KAIST; Jeongseob Ahn, Ajou University; Myeongjae Jeon, UNIST; Youngjin Kwon, KAIST
 
 ## 1. Tested environment
 ### 1.1. Hardware
