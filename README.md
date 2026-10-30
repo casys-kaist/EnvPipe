@@ -8,11 +8,11 @@ EnvPipe (**Env**elope + **Pipe**line Parallelism) is an energy-saving DNN traini
 ## Contents 
 - [1. Tested environment](#1-tested-environment)
     - [1.1. Hardware](#11-hardware)
-        - [1.1.1. Single-node](#11-single-node)
-            - [Single-V100](#111-single-v100)
-            - [Single-3090](#112-single-3090)
-        - [1.1.2. Multi-node](#12-multi-node)
-            - [Multi-V100](#121-multi-v100)
+        - [1.1.1. Single-node](#111-single-node)
+            - [Single-V100](#single-v100)
+            - [Single-3090](#single-3090)
+        - [1.1.2. Multi-node](#112-multi-node)
+            - [Multi-V100](#multi-v100)
     - [1.2. Software](#12-software)
 - [2. Dependent package installation](#2-dependent-package-installation)
 - [3. Download source code](#3-download-source-code)
@@ -124,17 +124,17 @@ deepspeed          0.7.4+unknown
 - Megatron-Deepspeed
 
 ```shell
-$ cd Megatron-DeepSpeed
+$ cd ../Megatron-DeepSpeed
 $ pip install -r requirements.txt
 ```
 
 - GPT Vocab
 
-Download gpt2-vocab.json and gpt2-merges.txt with [download_vocab.sh](https://github.com/microsoft/Megatron-DeepSpeed/blob/main/dataset/download_vocab.sh) and place the files in ```/data/webtext/```.
+Download gpt2-vocab.json and gpt2-merges.txt with [download_vocab.sh](Megatron-DeepSpeed/dataset/download_vocab.sh) and place the files in ```/data/webtext/```.
 
 - WebText
 
-Follow the instructions in [Collecting GPT Webtext Data](https://github.com/microsoft/Megatron-DeepSpeed#data-preprocessing) and [Data Preprocessing](https://github.com/microsoft/Megatron-DeepSpeed#data-preprocessing) to download and preprocess webtext dataset. I had to change ```USE_CYTHON = True``` in ```setup.py``` to install LSH. After merging the contents of webtext data into a single json file, run ```tools/preprocess_data.py```. Place ```webtext_text_document.bin``` and ```webtext_text_document.idx``` files in ```/data/webtext```. 
+Follow the instructions in [Collecting GPT Webtext Data](Megatron-DeepSpeed/README.md#collecting-gpt-webtext-data) and [Data Preprocessing](Megatron-DeepSpeed/README.md#data-preprocessing) to download and preprocess webtext dataset. I had to change ```USE_CYTHON = True``` in ```setup.py``` to install LSH. After merging the contents of webtext data into a single json file, run ```tools/preprocess_data.py```. Place ```webtext_text_document.bin``` and ```webtext_text_document.idx``` files in ```/data/webtext```.
 
 Megatron model trains with WebText dataset and other models train with synthetic dataset.
 
@@ -149,7 +149,7 @@ There are three parameters for energy saving optimization settings in EnvPipe.
 |  | uniform | Run all GPUs with optimal SM frequency that represents the minimum point in the energy valley curve. |
 |  | envelope | Run pipeline units with optimal SM frequency that are inside the outer envelope. |
 | ENVPIPE_SCHEDULING | 1f1b | 1F1B scheduling method. |
-|  | ours | EnvPipe's scehduling method. |
+|  | ours | EnvPipe's scheduling method. |
 | ENVPIPE_RECONFIGURE | default | SM frequencies of pipeline units on the critical path are not reconfigured. |
 |  | greedy |  SM frequencies of pipeline units on the critical path are greedily reconfigured from the end of the critical path. |
 |  | balanced | SM frequencies of pipeline units on the critical path are balanced as much as possible. |
