@@ -91,7 +91,7 @@ def get_envpipe_config(param_dict):
         envpipe_config_params = copy.copy(param_dict[ENVPIPE])
         return envpipe_config_params
     else:
-        raise RuntimeError('must provide envpipe configuration') 
+        raise RuntimeError('must provide envpipe configuration')
 
 
 def get_curriculum_enabled(param_dict):
