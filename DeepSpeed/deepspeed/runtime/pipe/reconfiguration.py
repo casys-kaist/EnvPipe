@@ -183,14 +183,14 @@ class PipelineExecutionGrid(object):
     def finish_reconfigure(self):
         return not self.is_reconfiguring[0]
 
-    # Note: The implementation to find the critical path differs from 
-    # the paper's explanation which compares Bubble Slack Time and 
+    # Note: The implementation to find the critical path differs from
+    # the paper's explanation which compares Bubble Slack Time and
     # Dependency Delay. In the paper, this was done to give a better understanding
-    # which pipeline unit affects the delay of the next unit in the critical path. 
-    # However, in our actual implementation, we compare the recv activation 
-    # time (Bubble Slack Time) to a threshold, which is the average recv 
-    # activation time when there is no bubble. This approach allows us to 
-    # more accurately identify delays in our system. 
+    # which pipeline unit affects the delay of the next unit in the critical path.
+    # However, in our actual implementation, we compare the recv activation
+    # time (Bubble Slack Time) to a threshold, which is the average recv
+    # activation time when there is no bubble. This approach allows us to
+    # more accurately identify delays in our system.
     def find_critical_path(self):
         # Initialize critical path. Need to find critical path every step
         self.critical_path = []
@@ -240,14 +240,14 @@ class PipelineExecutionGrid(object):
     def reconfigure_greedy(self):
         reconfigure_success = False
 
-        # Increase the SM frequency from the back of the critical path. 
+        # Increase the SM frequency from the back of the critical path.
         # (self.critical path is already reversed)
         for component in self.critical_path:
             if component.gpu_clock >= self.profiler.get_max_clock():
                 continue
 
             # Mutiplied to match the number of reconfigurations in a single step
-            # with that of balanced method. Balanced method increases the minimum 
+            # with that of balanced method. Balanced method increases the minimum
             # value(s) in the critical path which may be more than a single unit.
             component.gpu_clock += self.reconfigure_granularity * 3
             reconfigure_success = True
@@ -272,7 +272,7 @@ class PipelineExecutionGrid(object):
             if component.gpu_clock < min_gpu_clock:
                 min_gpu_clock = component.gpu_clock
 
-        # After experimenting with various balancing strategies, we found that starting from 
+        # After experimenting with various balancing strategies, we found that starting from
         # the front of the critical path provides the best energy savings.
         if min_gpu_clock != self.profiler.get_max_clock():
             for component in reversed(self.critical_path):
