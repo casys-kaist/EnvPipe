@@ -1,3 +1,5 @@
+# Third-party-derived code; excluded from the repository's MIT license.
+# See THIRD_PARTY_NOTICES.md in the repository root for its licensing status.
 """
 Reference: - https://raw.githubusercontent.com/weiaicunzai/pytorch-cifar100/master/models/resnet.py
 """

@@ -21,6 +21,7 @@ EnvPipe (**Env**elope + **Pipe**line Parallelism) is an energy-saving DNN traini
 - [6. Run benchmarks](#6-run-benchmarks)
     - [6.1. Single node](#61-single-node)
     - [6.2. Multi node](#62-multi-node)
+- [7. License](#7-license)
 
 ## 1. Tested environment
 ### 1.1. Hardware
@@ -224,3 +225,11 @@ $ sudo -E env PATH=$PATH ./fig12.sh # Multi-V100
 # Add the energy consumption of all the nodes to calculate the total energy consumption.
 $ cat result/fig12_[TIMESTAMP].csv 
 ```
+
+## 7. License
+
+Original EnvPipe contributions are licensed under the [MIT license](LICENSE).
+Third-party code retains its existing terms; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the scope and notices.
+The ResNet benchmark file is excluded from this MIT grant because permission
+for its referenced upstream implementation has not been established.
